@@ -1,3 +1,4 @@
+/*
 //How the data is kept in memory and how it is retrieved from memory , based on these the
 //data is divided into two types: 1.) Primitive and 2.) Non- primitive
 
@@ -51,3 +52,33 @@ const myfunction = function(){
 //example to use  function typeof
 //example-01 
 console.log(typeof bigNumber);
+*/
+
+
+//+++++++++++++++++++++++++++++lect-10 is written here++++++++++++++++++++++++++++++++++++++++++++++++++++
+//Note-01 :  In all primitive Data type everywhere stack memory is used
+//Note-02 :  In Non - Primitive data type Heap Memory is used
+//Note-03 : In stack memory , we get copy of variables what ever variables are declared
+//Note-04 : Whenever anything is defined in heap memory , then from there we get reference,original value ka so whatever changes we do ,original value also gets changed
+
+
+//example of stack memory allocation 
+let myYoutubename = "techflowdotcom"
+
+let anothername = myYoutubename
+anothername = "dummynew"
+
+console.log(myYoutubename);
+console.log(anothername)
+
+
+//example for heap memory
+let userOne = {
+    email:"user@google.com",
+    upi:"userybl"
+}
+let userTwo = userOne
+
+userTwo.email = "dummy@gmail.com"
+console.log(userOne.email)
+console.log(userTwo.email)
