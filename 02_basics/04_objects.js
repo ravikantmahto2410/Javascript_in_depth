@@ -85,3 +85,68 @@ console.log(tinderUser.hasOwnProperty('isLoggedIn'));
 
 
 
+
+
+// Destructring objects
+
+const course = {
+    coursename: "js in hindi",
+    price: "999",
+    courseInstructor: "hitesh"
+
+}
+// now how you will use these values
+// One way can be using dot notation and square notation and there is nothing wrong in doing this way
+// console.log(course.courseInstructor)
+
+
+// second way , but sometimes to reduce the lines of code and make clean code we can use this second way
+// second way is just syntaxical sugar
+//Syntax : const {which_value_you_want_to_extract} = kahan _se_value_extract_karni_hai 
+// const {courseInstructor} = course
+// after this point whenever we want this value we dont have to write again course.instructor
+// console.log(courseInstructor)  
+
+// suppose the name of the courseInstructor is long then we can also give name by our own
+const {courseInstructor: instructor} = course
+console.log(instructor);
+
+
+
+
+//In react there are some methods
+// const navbar = (props.company) => {
+
+// }
+// navbar(company = "hitesh")
+
+//instead of writing 118-121: we write
+const navbar = ({company}) => {
+
+}
+navbar(company = "hitesh")
+
+
+
+
+// Concept of API
+// suppose this is json
+// {
+//     "name": "Hritika",
+//     "coursename": "Javascript",
+//     "price": "free",
+
+// }
+
+
+// what happpens when json se jab api call hoti hai to hota kya hai milta kaisa hai
+
+//sometimeswe get API in form of arrays
+// [
+//     {},
+//     {},
+//     {},
+// ]
+
+
+//lets discuss One famous API Random me user API 
