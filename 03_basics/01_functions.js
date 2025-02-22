@@ -102,5 +102,66 @@ function loginUserMessage(username = "Sam"){ // since we are not passinng any va
 }
 console.log(loginUserMessage());
 
+//************************************************Functions with Objects and array in javascript******* */
+
+// function calculateCartPrice(num1){
+//     return num1;
+// }
+// console.log(calculateCartPrice(200))
+
+// when we have situations like when we don't know how many arguments are going to come
+
+// function calculateCartPrice(...num1){ // here we are using rest operator
+//     return num1
+// }
+// console.log(calculateCartPrice(200, 300, 400, 2000))
+// //Rest operator(...some_name) : Rest operator  bundles every items in one place 
 
 
+//one more case
+function calculateCartPrice(val1, val2, ...num1){ // here we are using rest operator
+    return num1
+}
+console.log(calculateCartPrice(200, 300, 400, 2000))
+//Rest operator(...some_name) : Rest operator  bundles every items in one place 
+
+
+// lets Understand How Objects are passed in function and how objects are used
+// const user = {
+//     username: "Toyota",
+//     price: 5000000
+// }
+// function handleObject(anyObject){
+//     console.log(`Username is ${anyObject.username} and price is ${anyObject.price}`) // our function doesn't know whether api is coming or ,user, hitesh , the function will do according to input parameter
+// }
+// handleObject(user);
+//remember when we are handling the objects in these types of methods then typesafety checking is necessary 
+
+
+
+// ab jarroori nhi hai ki object hum alag bana ke pass kare 
+
+function handleObject(anyObject){
+    console.log(`Username is ${anyObject.username} and price is ${anyObject.price}`) // our function doesn't know whether api is coming or ,user, hitesh , the function will do according to input parameter
+}
+handleObject({ // here we are passing the object directly 
+    username: "pen",
+    price: 10
+})
+
+
+
+// similar to passing objects we can also pass the array
+
+// const myNewArray = [200, 400, 100, 600]
+
+// function returnSecondValue(getArray){
+//     return getArray[1];
+// }
+// console.log(returnSecondValue(myNewArray));
+                                
+    //--> we can also pass the array directly to a function without first declaring in a variable like this
+    function returnSecondValue(getArray){
+            return getArray[1];
+    }
+    console.log(returnSecondValue([200, 400, 500, 10000]));                       
