@@ -94,3 +94,54 @@
 
 
 
+
+
+//////////////Sometimes we have to check multiple conditions  //////////
+// basics of multiple conditions
+// const balance = 1000
+// if (balance < 500) {
+//     console.log("less than 500");
+// } else if ( balance < 750) {
+//     console.log("less than 750");
+// } else if(balance < 900) {
+//     console.log(" less than 900");
+// } else{
+//     console.log( " less than 1200")
+// }
+
+
+
+
+//now some more in multiple conditions
+
+
+    // const userLoggedIn = true;
+    // const debitCard = true;
+    // //example-01
+    // // if(codition && debitCard) { // here both condition has to be true to execute the code inside this if block
+    // //     console.log(" Allow to buy course")
+    // // }
+    // //example-02
+    // if(codition && debitCard && 2 == 2) { // here both condition has to be true to execute the code inside this if block
+    //     console.log(" Allow to buy course")
+    // }
+
+
+    const userLoggedIn = true;
+    const debitCard = true;
+    const loggedInFromGoogle = false;
+    const loggedInFromEmail = true;
+    if(userLoggedIn && debitCard && 2 == 3){
+        console.log("Allow to buy Course");
+    }
+    if(loggedInFromGoogle || loggedInFromEmail) {
+        console.log("User logged in");
+    }
+
+
+//there are some other format also for applying these . To learn more go to next file that is switch.js
+
+
+    
+
+
