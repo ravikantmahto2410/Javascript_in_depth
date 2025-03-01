@@ -25,10 +25,10 @@
 //How to use loop inmap
 
 //for of loop
-const map = new Map() // Map apne aap mein ek Object hai
-map.set('IN', "India")
-map.set('USA', "United States of America")
-map.set('Fr', "France")
+// const map = new Map() // Map apne aap mein ek Object hai
+// map.set('IN', "India")
+// map.set('USA', "United States of America")
+// map.set('Fr', "France")
 
 // for(const key of map){
 //     console.log(key);
@@ -40,12 +40,12 @@ map.set('Fr', "France")
 
 
     //can we apply this for of loop in objects, lets find out
-    const myObject = {
-        'Game1' : 'NFS',
-        'Game2' : 'Spiderman'
-    }
+    // const myObject = {
+    //     'Game1' : 'NFS',
+    //     'Game2' : 'Spiderman'
+    // }
     // for(const [key, value] of myObject){
     //     console.log(key, ':-', value);
     // }
     //In this way the object is not iterateable
-    
+
