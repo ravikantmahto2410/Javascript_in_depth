@@ -18,4 +18,5 @@ forms.addEventListener('submit', function(chai){
     //show the results
     results.innerHTML = `<span>${BMI}</span>`
   }
+  // hw is to print the status whether its a underweight, overweight, 
 });
