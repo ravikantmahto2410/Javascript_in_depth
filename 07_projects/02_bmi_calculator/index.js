@@ -13,10 +13,20 @@ forms.addEventListener('submit', function(chai){
     results.innerHTML = `Please Give a valid Weight ${weight}`;
   }
   else {
-    const BMI = (weight / ((weight * height) / 1000)).toFixed(2);  // toFixed() is method because we want results upto 2 decimal places only
+    const BMI = (weight / ((height * height) / 10000)).toFixed(2);  // toFixed() is method because we want results upto 2 decimal places only
 
     //show the results
     results.innerHTML = `<span>${BMI}</span>`
+    if(BMI < 18.6){
+      document.querySelector('#category').innerHTML = `<p>UnderWeight</p>`
+    }
+    else if(BMI >= 18.6 && BMI <= 24.9){
+      document.querySelector('#category').innerHTML = `<p>Normal Range</p>`
+    }
+    else{
+      document.querySelector('#category').innerHTML = `<p>Overweight</p>`
+    }
   }
+  
   // hw is to print the status whether its a underweight, overweight, 
 });
