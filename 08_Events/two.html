@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Coding is Fun</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //setTimeout() is a method , it also calls a API , ye core jas ke part nhi
+    // setTimeout(function(){
+    //     console.log("Tata Harrier")
+    // },2000)
+
+    // we can also give reference like this
+        // const sayCar = function(){
+        //     console.log("Tata Harrier")
+        // }
+        // setTimeout(saycar, 2000)
+    
+        
+    //can we change the Coding is Fun in h1
+        // const sayCar = function(){
+        //     console.log("Tata Safari")
+        // }
+        // document.querySelector('h1').innerHTML = "Best SUV Car"
+        // setTimeout(saycar,2000)
+
+        //To Change the Coding is Fun in h1 after 2000
+            // const sayCar = function(){
+            //     console.log("Tata Safari")
+            // }
+            // const changeText = function(){
+            //     document.querySelector('h1').innerHTML = "The Best SUV of All Time"
+            // }
+            // setTimeout(changeText,2000)
+
+                //If we have implemented the setTimeout and how we can stop that if we  want to stop if a event does't occur
+                //clearTimeout()
+                    // clearTimeout needs  reference 
+
+                        //const sayCar = function(){
+                        //    console.log("Tata Safari")
+                        //}
+                        //const changeText = function(){
+                        //    document.querySelector('h1').innerHTML = "The Best SUV of All Time"
+                        //}
+
+                        //const changeMe =  setTimeout(changeText,2000)
+                        //clearTimeout(changeMe)
+
+                        //But above method of  clearTimeout is not  good , we have to apply on event for good practise
+                            const sayCar = function(){
+                               console.log("Tata Safari")
+                            }
+                            const changeText = function(){
+                               document.querySelector('h1').innerHTML = "The Best SUV of All Time"
+                            }
+
+                            const changeMe =  setTimeout(changeText,2000)
+                            document.querySelector('#stop').addEventListener('click', function(){
+                                clearTimeout(changeMe)
+                                console.log("Stopped")
+                            })
+
+    //handler is a function  which doesn't have name 
+     
+
+    //setInterval is a also a function different from setTimeout , here we ask interval ,har isss interval mein task ko continously execute karta jaaunga 
+
+
+
+    //clearInterval ,ClearTimeout these are part of setTimout() , and setInterval .....important for interview
+</script>
+</html>
