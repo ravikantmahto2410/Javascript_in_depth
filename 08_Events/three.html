@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Swimming Tutorial</h1>
+
+    <button></button>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+
+
+</body>
+<script>
+    //setInterval()
+
+        // setInterval(function(){
+        //     console.log("Fortuner" , Date.now());
+        // }, 1000)
+
+
+        //we can also use reference 
+            // const sayDate = function(){
+            //     console.log("Fortuner", Date.now())
+            // }
+
+            // setInterval(sayDate,1000)
+
+                //we can also pass the parameters in setInterval
+                // const sayCar = function(str){
+                //     console.log(str, Date.now());
+                // }
+                // setInterval(sayCar,1000,"hi");
+    
+    // How to stop setInterval function , we use clearInterval
+        const sayBike = function(str){
+            console.log(str , Date.now());
+        } 
+
+        const interValid = setInterval(sayBike, 1000, "hi");
+        clearInterval(interValid)
+
+        //HW task: after clicking on button  start, it should start printing name hitesh and date. And if we press on stop it stops printing
+        
+
+</script>
+</html>
