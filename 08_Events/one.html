@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color:#414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    //javascript ke jitne bhi events run hote hai wo sequentially hi run hote hai
+    // document.getElementById('owl').onclick = function () { // ye approach dikhne mein thik hai , but when we are applying onclick on id then onclick mein kuch problem ho sakti hai, because we  dont have enough informations we should use eventListeners, eventListeners not only gives onClick functionality but also gives propagation availability
+    //     alert('Owl clicked')
+    // } 
+
+
+    // best approach to add onclick functionality
+    // by using addEventListener
+        //what we have to study for interview  types of events, timestamp(interview), defaultPrevented, target, toElement, srcElement, currentTarget
+        //interview perspective : clientX, clientY, screenX, screenY
+        //Interesting: altKey, ctrlKey, shiftKey, keyCode
+
+        //Interview Question: Why this third parameter i.e false is used , what it is used
+        //Ans: the third parameter is by default false , so even if we don't write then also it's fine , But what is the meaning of true and false here
+        //     sometimes in interview they gives application to build , that will be never be completed without using these true and false
+
+
+        // 
+        // document.getElementById('owl').addEventListener('click', function(chai){
+        //     console.log(chai)
+        // }, false)
+
+        //event propagation: it has two two context 1.)eventBubbling , 2.)eventCapturing
+            //1.) EventBubbling : in market most of the projects are made by using default i.e false that is called eventBubbling
+            //2.) EvenCapturing : in some cases we have to use eventCapturing
+
+            //scenarios to identify whether we have to use eventBubbling or eventCapturing
+                //Example-01 (eventBubbling)
+                    // document.getElementById('images').addEventListener('click', function(chai){
+                    //     console.log('Clicked inside the ul')
+                    // }, false)
+
+                    // document.getElementById('owl').addEventListener('click', function(chai){
+                    //     console.log('Clicked on Owl')
+                    //     // chai.stopPropagation() // this is similar to preventDefault. after using this element buble hoke upar nhi jaayega
+                    // }, false)
+                    //in this event propagation, here there is eventBubbling is taking place
+                    
+                    //we can also write example -01 (eventBubbling) like this i.e remove the the parameter false 
+                        // document.getElementById('images').addEventListener('click', function(chai){
+                        //     console.log('Clicked inside the ul')
+                        // })
+
+                        // document.getElementById('owl').addEventListener('click', function(chai){
+                        //     console.log('Clicked on Owl')
+                        // })
+                     
+                // example capturing Mode (in capturing mode  Capturing jaata hai top se bottom pe )
+                    // document.getElementById('images').addEventListener('click', function(chai){
+                    //     console.log('Clicked inside the ul')
+                    // }, true)
+
+                    // document.getElementById('owl').addEventListener('click', function(chai){
+                    //     console.log('Clicked on Owl')
+                    // }, true)
+
+
+        // we have to check whether we have to use eventBubbling or eventCapturing , it totally depends on use case
+
+    
+
+     
+        // How to use preventDefault
+            document.getElementById('google').addEventListener('click', function(e){
+                e.preventDefault()
+                e.stopPropagation() //to prevent form bubbling up
+                console.log('Google clicked')
+                
+            }, false)
+    //one more approach for doing this onclick functionality i.e  by using attachEvent() method
+    //jQuery :  inside jQuery we had also 'on' event
+
+    //project style work
+    //work -01 on clicking the image all image disappears
+
+        document.querySelector('#images').addEventListener('click', function(e){
+            console.log(e)
+        }, false)
+
+
+        //suppose we want to remove a image from the li then 
+            // first way can be 
+                document.querySelector('#images').addEventListener('click', function(e){
+                    // console.log(e.target.parentNode);
+                    console.log(e.target.tagName);
+                    if(e.target.tagName === 'IMG'){
+                        console.log(e.target.id)
+                        let removeIt = e.target.parentNode
+                        removeIt.remove()
+                    }
+                      
+                })
+
+            // Second way can be
+            // document.querySelector('#images').addEventListener('click', function(e){
+            //     console.log(e.target.parentNode);
+            //     let removeIt = e.target.parentNode
+            //     removeIt.parentNode.removeChild(removeIt)
+            // })
+</script>
+</html>
