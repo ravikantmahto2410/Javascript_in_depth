@@ -36,15 +36,29 @@
                 // setInterval(sayCar,1000,"hi");
     
     // How to stop setInterval function , we use clearInterval
-        const sayBike = function(str){
-            console.log(str , Date.now());
-        } 
+        // const sayBike = function(str){
+        //     console.log(str , Date.now());
+        // } 
 
-        const interValid = setInterval(sayBike, 1000, "hi");
-        clearInterval(interValid)
+        // const interValid = setInterval(sayBike, 1000, "hi");
+        // clearInterval(interValid)
 
         //HW task: after clicking on button  start, it should start printing name hitesh and date. And if we press on stop it stops printing
         
+        let interValid;
+        const startPrint = function(str){
+            if(!interValid){
+                interValid = setInterval(startPrint, 1000, 'Aakash')
+            }
+            console.log(str,Date.now())
+        }
+
+        const stopPrint = function(){
+            clearInterval(interValid)
+            interValid = null
+        }
+        document.querySelector('#start').addEventListener('click', startPrint)
+        document.querySelector('#stop').addEventListener('click',stopPrint)
 
 </script>
 </html>
