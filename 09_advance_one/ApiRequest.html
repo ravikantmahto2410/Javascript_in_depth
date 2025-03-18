@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    The XMLHttpRequest.readyState property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:
+    Value	State	Description
+    0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE	The operation is complete.
+</body>
+<script>
+    // const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    // const xhr = new XMLHttpRequest();
+    // xhr.open('GET', requestUrl)
+    // console.log(xhr.readyState);
+    // xhr.send()
+
+    //To continuously track the status of status
+        // const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+        // const xhr = new XMLHttpRequest();
+        // xhr.open('GET', requestUrl)
+        // xhr.onreadystatechange = function(){
+        //     console.log(xhr.readyState);
+        // }
+        // xhr.send()
+
+        //can we detect state
+            const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', requestUrl)
+            xhr.onreadystatechange = function(){
+                console.log(xhr.readyState);
+                if(xhr.readyState === 4){
+                    // // const data = this.responseText
+                    // // console.log(typeof data);  //jab bhi aapke paas response aata hai url se  wo string mein hi aata hai most of the time
+                    // console.log(data.followers)
+
+
+                    //to convert the type of data from string  , that we are getting from the response from the url ,aplly below lines of texhnique
+                        const data = JSON.parse(this.responseText)
+                        console.log(typeof data);  
+                        console.log(data.followers)
+                        //Assignemnet: Object Mein se Photo nikaliye and , followers nikalye and ek card banaiye,
+                }
+            }
+            xhr.send()
+
+</script>
+</html>

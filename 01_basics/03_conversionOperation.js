@@ -1,11 +1,11 @@
-/*let score = "33"
+// let score = "33"
 
-    console.log(typeof score);
-    console.log(typeof(score));
+// console.log(typeof score);
+// console.log(typeof(score));
 
-    let valueInNumber = Number(score)  //Now it is guaranteed that the score is converted from string to Number
-    console.log(typeof valueInNumber);
-*/
+// let valueInNumber = Number(score)  //Now it is guaranteed that the score is converted from string to Number
+// console.log(typeof valueInNumber);
+
 
 // Note: Don't rely on Number data type
 
@@ -26,9 +26,9 @@
 // "hitesh" => true
 
 
-let someNumber = 33
-let stringNumber = String(someNumber)
-console.log(typeof stringNumber);
+// let someNumber = 33
+// let stringNumber = String(someNumber)
+// console.log(typeof stringNumber);
 
 
 //**************************Operations***************** */
@@ -41,7 +41,7 @@ console.log(typeof stringNumber);
     let str1 = "hello"
     let str2 = "bandariya"
 
-    let str3 = str1 + str2;
+    let str3 = str1 +" "+ str2;
     console.log(str3);
 
 
@@ -49,16 +49,16 @@ console.log(typeof stringNumber);
     console.log(1 + "2");
     console.log("1" + 2 + 2);
     console.log(1 + 2 + "2");//If first number are are there then conversion is done on number  // In javascript whenever these types of conversions are being done don't be dependent on the javascript conversion
-*/
+/*
 /*
 console.log(true);
 console.log(+true); // dont do these types of conversions
 console.log(+""); // also dont do these types of conversions
 */
 
-let gameCounter = 100;
-++gameCounter;
-console.log(gameCounter);
+// let gameCounter = 100;
+// ++gameCounter;
+// console.log(gameCounter);
 
 
 
