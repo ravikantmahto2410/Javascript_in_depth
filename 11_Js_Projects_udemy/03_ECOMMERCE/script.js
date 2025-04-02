@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartTotalMessage = document.getElementById('cart-total')
   const totalPriceDisplay = document.getElementById('total-price')
   const checkOutBtn = document.getElementById('checkout-btn')
+  const removeItem = document.getElementById('removeItem-btn')
 
   products.forEach(product => {
     const productDiv = document.createElement('div')
@@ -40,10 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCart();
   }
 
+  let overAllPrice = 0;
+
   function renderCart(){
     cartItems.innerText = "";
     let totalPrice = 0;
-
+    
     if(cart.length > 0){
       emptyCartMessage.classList.add('hidden')
       cartTotalMessage.classList.remove('hidden')
@@ -52,16 +55,73 @@ document.addEventListener('DOMContentLoaded', () => {
         totalPrice += item.price
 
         const cartItem = document.createElement('div')
+        cartItem.classList.add('removeProduct')
         cartItem.innerHTML = `
         ${item.name} - ${item.price.toFixed(2)}
+        <button data-id="${item.id}">Remove</button>
         `
         cartItems.appendChild(cartItem)
         totalPriceDisplay.textContent = `${totalPrice.toFixed(2)}`
+        overAllPrice = totalPrice;
       })
+
     } else {
       emptyCartMessage.classList.remove("hidden")
       totalPriceDisplay.textContent = `${totalPrice.toFixed(2)}`
       
+    }
+  }
+
+  cartItems.addEventListener('click', (e) => {
+    if(e.target.tagName === 'BUTTON'){
+      const productId = parseInt(e.target.getAttribute('data-id'));
+      const removeItem = cart.find(item => item.id === productId);
+      removeCart(removeItem)
+    }
+  })
+
+  function removeCart(removeItem){
+
+    cartItems.innerText = "";
+    let totalPrice = 0;
+    
+    const deleteItem = removeItem
+    
+    // console.log(deleteItem);
+    // console.log(remainingCart)
+    
+    
+    if(cart.length > 0){
+      emptyCartMessage.classList.add('hidden')
+      cartTotalMessage.classList.remove('hidden')
+
+      cart.forEach((item, index) => {
+        if(item.id === deleteItem.id){
+          const remainingCart = cart.splice(index,1)
+          
+        }
+      
+      })
+      if(cart.length === 0){
+        cartItems.innerText = "";
+        totalPrice = 0;
+        totalPriceDisplay.textContent = `${totalPrice.toFixed(2)}`
+        cartTotalMessage.classList.remove('hidden')
+      }
+      else{
+        cart.forEach((item,index) => {
+          totalPrice += item.price
+        
+          const cartItem = document.createElement('div')
+          cartItem.classList.add('removeProduct')
+          cartItem.innerHTML = `
+          ${item.name} - ${item.price.toFixed(2)}
+          <button data-id="${item.id}">Remove</button>
+          `
+          cartItems.appendChild(cartItem)
+          totalPriceDisplay.textContent = `${totalPrice.toFixed(2)}`
+        })
+      }
     }
   }
 
@@ -70,4 +130,5 @@ document.addEventListener('DOMContentLoaded', () => {
     alert("Checkout Successfully")
     renderCart()
   })
+
 })
