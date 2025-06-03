@@ -26,8 +26,8 @@ console.log(Math.abs(-4)); // abs is absolute value, it is used when we want to 
 console.log(Math.round(4.3)); // this will round of the number passed into this function
 console.log(Math.ceil(4.2));  // this will take upper value
 console.log(Math.floor(4.2));// this will take the lower value
-console.log(Math.min(4, 3,6,8));
-console.log(Math.max(4,3,6,8))
+console.log(Math.min(4, 3, 6, 8));
+console.log(Math.max(4, 3, 6, 8))
 
 
 console.log(Math.random()); // The value of Math.random() will always lie between 0 and 1

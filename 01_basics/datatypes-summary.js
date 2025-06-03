@@ -12,6 +12,8 @@
 
 //InterView Question.)Javascript is a statically types language or dynamically Typed language
 //Ans: Javascript is a Dynamically Typed language where the interpreter assigns variables a type at runtime based on the variable's value at the time. 
+        //In Dynamic Typing, type checking is performed at runtime. For example, Python is a dynamically typed language. It means that the type of a variable is allowed to change over its lifetime. Other dynamically typed languages are -Perl, Ruby, PHP, Javascript etc.
+        //Static Typing is opposite to Dynamic Typing. In Static Typing, type checking is performed during compile time. It means that the type of a variable is known at compile time. For some languages, the programmer must specify what type each variable is (e.g C, C++, Java), other languages offer some form of type inference(e.g. Scala, Haskell).With    //Static Typing, variables generally are not allowed to change types.
 const personName = "Bandariya";
 const score = 100;
 const scoreValue = 100.3

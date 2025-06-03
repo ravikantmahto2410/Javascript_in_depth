@@ -13,7 +13,7 @@ const myArr2 = new Array(1, 2, 3, 4)
 // console.log(myArr[0]);
 
 // Array Methods
-//01 push
+// 01 push
 // myArr.push(9);
 // myArr.push(101);
 // myArr.pop();

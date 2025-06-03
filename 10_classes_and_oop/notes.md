@@ -16,7 +16,7 @@
     - Constructor Function
     - prototypes
     - Classes
-    - Instances
+    - Instances(new, this)
 
 ## 4 Pillars
 Abstraction

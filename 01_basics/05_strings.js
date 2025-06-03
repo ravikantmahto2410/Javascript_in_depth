@@ -34,7 +34,7 @@ const gameName2 = new String('lukka-chippi');
 // const newString = gameName2.substring(0,4); // last value is not included
 // console.log(newString);
 
-//Splice Method
+//Slice Method
 const slicedString = gameName2.slice(-13,4); // negative index gives reverse number
 console.log(slicedString);
 
